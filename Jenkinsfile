@@ -9,9 +9,7 @@ pipeline {
   stages {
     stage('Deploy') {
       steps {
-        sh '''ssh louismylle@192.168.1.183 <<EOF
- touch file.js
-EOF'''
+        sh 'whoami'
       }
     }
 
