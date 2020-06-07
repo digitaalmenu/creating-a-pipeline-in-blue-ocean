@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Deploy') {
       steps {
-        sh 'whoami'
+        sh 'ssh 192.168.1.183'
       }
     }
 
