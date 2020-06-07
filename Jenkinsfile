@@ -10,7 +10,7 @@ pipeline {
     stage('Deploy') {
       steps {
         sshagent(credentials: ['e0b305e2-d840-4b6f-864f-6793f5a0e00f']) {
-          sh 'touch index.js'
+          sh 'whoami'
         }
 
       }
