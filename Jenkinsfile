@@ -22,17 +22,11 @@ pipeline {
       }
     }
 
-    stage('Deliver') {
-      steps {
-        sh './jenkins/scripts/deliver.sh'
-        input 'Finished using the web site? (Click "Proceed" to continue)'
-        sh './jenkins/scripts/kill.sh'
-      }
-    }
-
     stage('Deploy') {
       steps {
-        sh '''ssh louismylle@192.168.1.183 <<EOF
+        sh '''!#/bin/bash
+
+ssh louismylle@192.168.1.183 <<EOF
 
 cd /home/louismylle/digitaalmenu/site/
 git pull
