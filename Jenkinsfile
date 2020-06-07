@@ -8,10 +8,9 @@ pipeline {
   }
   stages {
     stage('Deploy') {
-      agent any
       steps {
         sh '''touch file.js
- exit'''
+Â exit'''
       }
     }
 
