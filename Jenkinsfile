@@ -32,12 +32,13 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh '''sshpass -p Snoes007 ssh louismylle@192.168.1.183
+        sh '''ssh louismylle@192.168.1.183 <<EOF
 
 cd /home/louismylle/digitaalmenu/site/
 git pull
 npm install - production
-npm run build'''
+npm run build
+EOF'''
       }
     }
 
