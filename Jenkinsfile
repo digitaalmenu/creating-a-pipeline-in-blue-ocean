@@ -10,8 +10,10 @@ pipeline {
     stage('Deploy') {
       agent any
       steps {
-        sh '''ssh louismylle@192.168.1.183 <<EOF
- touch index.js
+        sh '''#!/bin/sh
+ssh louismylle@192.168.1.183 <<EOF
+ touch file.js
+ exit
 EOF'''
       }
     }
