@@ -11,7 +11,7 @@ pipeline {
       agent any
       steps {
         sh '''touch file.js
-exit'''
+ exit'''
       }
     }
 
