@@ -7,25 +7,10 @@ pipeline {
 
   }
   stages {
-    stage('Build') {
-      steps {
-        sh 'npm install'
-      }
-    }
-
-    stage('Test') {
-      environment {
-        CI = 'true'
-      }
-      steps {
-        sh './jenkins/scripts/test.sh'
-      }
-    }
-
     stage('Deploy') {
       agent any
       steps {
-        sh './jenkins/scripts/deploy.sh'
+        sh 'ssh louismylle@192.168.1.183 \'touch index.js\''
       }
     }
 
