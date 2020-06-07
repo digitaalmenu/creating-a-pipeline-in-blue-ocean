@@ -26,7 +26,7 @@ pipeline {
       steps {
         sh '''#!/usr/bin/env sh
 
-ssh louismylle@192.168.1.183 <<EOF
+/usr/bin/ssh louismylle@192.168.1.183 <<EOF
 
 cd /home/louismylle/digitaalmenu/site/
 git pull
