@@ -8,8 +8,11 @@ pipeline {
   }
   stages {
     stage('Deploy') {
-      steps {
-        sh 'ssh 192.168.1.183'
+      steps{
+        sshagent(credentials : ['louismylle']) {
+            sh 'ssh -o StrictHostKeyChecking=no louismylle@192.168.1.183'
+            sh 'touch index.js'
+        }
       }
     }
 
