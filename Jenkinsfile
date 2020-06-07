@@ -24,7 +24,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh '''#!/bin/bash
+        sh '''#!/usr/bin/env sh
 
 ssh louismylle@192.168.1.183 <<EOF
 
