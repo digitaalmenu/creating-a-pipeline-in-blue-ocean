@@ -24,15 +24,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh '''#!/usr/bin/env sh
-
-/usr/bin/ssh louismylle@192.168.1.183 <<EOF
-
-cd /home/louismylle/digitaalmenu/site/
-git pull
-npm install - production
-npm run build
-EOF'''
+        sh './jenkins/scripts/deploy.sh'
       }
     }
 
